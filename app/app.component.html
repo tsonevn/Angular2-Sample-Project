@@ -1,0 +1,12 @@
+<grid-layout rows="*C, auto">
+    <button text="Add new image" (tap)="addNewImage()" row="1"></button>
+    <!--<ActivityIndicator [busy]={{isLoading}} rowSpan="2">-->
+    <ListView [items]="imageLibrary" class="small-spacing" row="1">
+        <template #item="item" row="1">
+            <GridLayout rows="2*,*">
+                <Image [src]="item.imageSource" row="0"></Image>
+                <Label [text]="item.imageName" class="medium-spacing" row="1"></Label>
+            </GridLayout>
+        </template>
+    </ListView>
+</grid-layout>
